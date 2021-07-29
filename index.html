@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Property Developers</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+</head>
+
+<body>
+    <nav id="nav">
+        <div class="logo">
+            <img src="images/stone.png">
+        </div>
+        <div class="menu-list">
+            <ul>
+                <li>Home</li>
+                <li>About Us</li>
+                <li>Products</li>
+                <li>Contact</li>
+            </ul>
+        </div>
+        <div class="social-icons">
+            <i class="fab fa-facebook-f"></i>
+            <i class="fab fa-instagram"></i>
+            <i class="fas fa-phone-alt"></i>
+        </div>
+    </nav>
+
+    <div class="small-nav" id="small-nav">
+        <div class="small-logo" id="logo">
+            <img src="images/stone.png">
+        </div>
+        <div class="icon">
+            <i onclick="showlist()" class="fal fa-bars"></i>
+        </div>
+    </div>
+    <div id="small-menu">
+        <i onclick="hidelist()" class="fal fa-times close"></i>
+        <i onclick="hidelist()" class="fal fa-times close-in"></i>
+        <ul>
+            <li>Home</li>
+            <li>About Us</li>
+            <li>Products</li>
+            <li>Contact</li>
+        </ul>
+    </div>
+    <div id="banner">
+        <img src="images/Desktop_banner_1_1_4c81629923.jpg">
+        <img src="images/Desktop_banner_1_3_ef048ebd68.jpg">
+        <img src="images/1.jpg">
+    </div>
+    <div class="card-div">
+        <div class="card">
+            <i class="material-icons">campaign</i>
+            <h4>Complete Transparency</h4>
+            <p>Experience total transparency in all transactions</p>
+        </div>
+        <div class="card">
+            <i class="material-icons">enhanced_encryption</i>
+            <h4>Client Commitment</h4>
+            <p>Hard-wired to deliver only excellent service</p>
+        </div>
+        <div class="card">
+            <i class="material-icons">payments</i>
+            <h4>Trouble-free Transactions</h4>
+            <p>Support for every legal transaction</p>
+        </div>
+        <div class="card">
+            <i class="material-icons">insights</i>
+            <h4>Gainful Insights</h4>
+            <p>Real-time real estate guidance</p>
+        </div>
+    </div>
+    <div class="prod-div">
+        <div class="prod-head">
+            <h1>Best Sellers</h1>
+            <h3>Lorem, ipsum dolor sit amet consectetur adipisicing.</h3>
+        </div>
+        <div class="prod-img">
+            <div class="img-box">
+                <img src="images/card1.jpeg">
+                <h2>Atmos</h2>
+            </div>
+            <div class="img-box">
+                <img src="images/enclave.webp">
+                <h2>Enclave</h2>
+            </div>
+            <div class="img-box">
+                <img src="images/fontus.webp">
+                <h2>Granites</h2>
+            </div>
+            <div class="img-box">
+                <img src="images/pristine.webp">
+                <h2>Apple</h2>
+            </div>
+            <div class="img-box">
+                <img src="images/waterway.jpeg">
+                <h2>Turmeric</h2>
+            </div>
+        </div>
+    </div>
+    <div class="about-div">
+        <div class="about-img">
+            <div class="color">
+                <div class="color-img" data-aos="new-animation" data-aos-duration="1000" data-aos-once="true">
+                </div>
+            </div>
+        </div>
+        <div class="about-txt">
+            <h1>About Us</h1>
+            <p>With in-depth knowledge of the real estate industry, Stone & Acres is poised to carve out a niche for
+                itself as one of India’s most transparent and reliable real estate companies.</p>
+            <div class="about-btn">
+                <button>Read More</button>
+                <button>Contact Us</button>
+            </div>
+        </div>
+    </div>
+    <div class="feedback">
+        <div class="heading">
+            <h4>REAL STORIES</h4>
+        </div>
+        <div id="slider">
+            <div class="slide">
+                <p>
+                    “I was impressed with the professional response from the entire ATMOS team from Stone and Acres all
+                    through the deal. <br>
+                    There are plots in proximity cheaper than ATMOS, but I felt that this is a good buy considering.
+                    <br>
+                    - The 100 acres gated community with 24/7 security ensuring safety for the residences. <br>
+                    - ATMOS is just a few hundred meters from Ponmar Junction. <br>
+                    - A very Peaceful, Greenery and Lovely place to live. <br>
+                    - Well laid underground electric cables ensuring zero risks.<br>
+                    Ponmar is a developing area surrounded by plenty of schools and colleges, with public transportation
+                    and
+                    easy accessibility to key places around GST Road, OMR and Medavakkam.”
+                </p>
+                <img src="images/bala.jpg" alt="">
+                <h5>BALA SUBRAMANIAN</h5>
+            </div>
+
+            <div class="slide">
+                <p>
+                    “The land spread across acres with serenity shows the meticulous way of hard work each of the team
+                    exhibited. Among numerous projects, I have searched for I have ended up in this God-blessed place.
+                    Investing huge amount and sometimes even a fortune worth every penny here, morally and economically.
+                    The
+                    location of the project and connectivity to IT hubs and schools are much satisfactory. They say
+                    "Don’t
+                    judge the book by its cover", sometimes it stands opposite, their brochure or website details match
+                    exact reality.”
+                </p>
+                <img src="images/nithya.jpg" alt="">
+                <h5>NITHYA</h5>
+            </div>
+            <div class="slide">
+                <p>
+
+                    “Being apprehensive initially about buying land in Ponmar, my mind was put to ease when I saw the
+                    professionalism in the SA team.
+                    Everything was explained in detail and clarified which made it easier for us to choose the right
+                    plot in Ponmar.”
+
+                </p>
+                <img src="images/testi-1.jpg" alt="">
+                <h5>NITHYA</h5>
+            </div>
+
+        </div>
+        <div class="arrow">
+            <i onclick="incre()" class="fa fa-angle-left"></i>
+            <i onclick="decre()" class="fa fa-angle-right"></i>
+        </div>
+    </div>
+
+    <div class="counts">
+        <div>
+            <h1>9</h1>
+            <p>PROJECTS</p>
+        </div>
+        <div>
+            <h1>836</h1>
+            <p>HAPPY CLIENTS</p>
+        </div>
+        <div>
+            <h1>1128</h1>
+            <p>SUCCESSFUL TRANSACTIONS</p>
+        </div>
+    </div>
+
+    <div class="ask-div">
+        <div class="ask-head">
+            <h1>Ready to get started?
+                Join the Stone & Acres community.</h1>
+        </div>
+        <div class="ask-email">
+            <button>Send an Enquiry</button>
+            <p>Do you have a question?</p>
+            <p>Ask here.</p>
+        </div>
+    </div>
+    <div id="footer">
+        <div class="footer">
+            <div>
+                <h6>Products</h6>
+                <ul>
+                    <li>Atmos</li>
+                    <li>Waterway</li>
+                    <li>Pristine</li>
+                    <li>Fontus</li>
+                    <li>Enclave</li>
+                </ul>
+            </div>
+            <div>
+                <h6>Get in Touch</h6>
+                <ul>
+                    <li>contact@stoneandacres.com</li>
+                    <li>Stone & Acres Property Developers</li>
+                    <li>78/2(138/2), L.B Road, Thiruvanmiyur,</li>
+                    <li>Chennai 600 041</li>
+                    <li>+91 9176 441 441</li>
+                </ul>
+            </div>
+            <div>
+                <h6>Connect with Us</h6>
+                <div class="social-icons wd">
+                    <i class="fab fa-facebook-f"></i>
+                    <i class="fab fa-instagram"></i>
+                    <i class="fas fa-phone-alt"></i>
+                </div>
+            </div>
+        </div>
+        <div class="footer-btm" id="footer-btm">
+            <p>© 2020 Stone and Acres Property Developers LLP. All Rights Reserved.</p>
+        </div>
+    </div>
+
+    <div id="strapi">
+
+    </div>
+</body>
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script>
+    AOS.init();
+</script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script>
+    $(document).ready(function() 
+{
+    alert("test");
+    load();
+});
+</script>
+<script>
+    var indexValue = 1;
+    function banners() {
+        var banner = document.getElementById("banner"),
+            images = banner.getElementsByTagName("img");
+        setTimeout(banners, 5000);
+        for (let index = 0; index < images.length; index++) {
+            images[index].style.display = "none";
+        }
+        if (indexValue > images.length) { indexValue = 1 }
+        images[indexValue - 1].style.display = "block";
+        indexValue++;
+    }
+    banners();
+
+    var Yvalue = 0;
+    var Yvalues = 0;
+    window.addEventListener("scroll", function () {
+        var nav = window.pageYOffset;
+        if (nav > 450) {
+            document.getElementById("nav").classList.add("fixed");
+        } else {
+            document.getElementById("nav").classList.remove("fixed");
+        }
+        var footer = window.pageYOffset;
+        if (footer > 3496) {
+            document.getElementById("footer").classList.add("sticky");
+        } else {
+            document.getElementById("footer").classList.remove("sticky")
+        }
+        var smallNav = window.pageYOffset;
+        if (smallNav > 330) {
+            document.getElementById("small-nav").classList.add("fixed");
+        } else {
+            document.getElementById("small-nav").classList.remove("fixed");
+        }
+    });
+    function slider() {
+        var slider = document.getElementById("slider");
+        var div = slider.getElementsByTagName("div");
+        for (let index = 0; index < div.length; index++) {
+            div[index].style.display = "none";
+            div[0].style.display = "flex";
+        }
+    }
+    slider();
+    var increIndex = 1;
+    function incre() {
+        var slider = document.getElementById("slider");
+        var div = slider.getElementsByTagName("div");
+        for (let index = 0; index < div.length; index++) {
+            div[index].style.display = "none";
+        }
+        if (increIndex > div.length) {
+            increIndex = 1;
+        }
+        console.log(increIndex);
+        div[increIndex - 1].style.display = "flex";
+        increIndex++;
+    }
+    var decreIndex = 1;
+    function decre() {
+        var slider = document.getElementById("slider");
+        var div = slider.getElementsByTagName("div");
+        for (let index = 0; index < div.length; index++) {
+            div[index].style.display = "none";
+        }
+        if (decreIndex == 0) {
+            decreIndex = div.length;
+        }
+        console.log(decreIndex);
+        div[decreIndex - 1].style.display = "flex";
+        decreIndex--;
+    }
+    function showlist() {
+        document.getElementById("small-menu").style.display = "flex";
+        document.getElementById("logo").style.visibility = "hidden";
+        document.body.style.overflow = "hidden";
+
+    }
+    function hidelist() {
+        document.getElementById("small-menu").style.display = "none";
+        document.getElementById("logo").style.visibility = "visible";
+        document.body.style.overflow = "visible";
+    }
+function load(){
+    $.ajax({
+        url: "http://localhost:1342/products",
+        type: 'GET',
+        success: function (res) {
+            console.log(res);
+            // alert(res);
+
+            $.each(res, function(i, item) 
+			{
+				// var dataid = i+1;
+				// if(res[i].cover_image == null)
+				// {
+				// 	var coverimage = "assets/img/default_image.jpg"
+				// }
+				// else
+				// {
+				// 	var coverimage = "https://api.stoneandacres.com"+res[i].cover_image.url;
+				// }		
+
+				var projecthtml = '<div>'+res[i].product+'</div>';
+				setTimeout(function(){
+				$("#strapi").append(projecthtml);
+				}, 1000 * i );	
+				
+			});
+        }
+    });
+    // document.getElementById("strapi").innerHTML= this.res;
+}
+
+</script>
+
+</html>
