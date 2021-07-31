@@ -27,7 +27,7 @@
             <ul>
                 <li>Home</li>
                 <li>About Us</li>
-                <li>Products</li>
+                <li onclick="openPage('product.html')">Products</li>
                 <li>Contact</li>
             </ul>
         </div>
@@ -85,28 +85,28 @@
     </div>
     <div class="prod-div">
         <div class="prod-head">
-            <h1>Best Sellers</h1>
-            <h3>Lorem, ipsum dolor sit amet consectetur adipisicing.</h3>
+            <h1>Projects</h1>
+            <h3>Redefining the landscape of traditional realty.</h3>
         </div>
         <div class="prod-img">
             <div class="img-box">
-                <img src="images/card1.jpeg">
-                <h2>Atmos</h2>
+                <img src="images/Green chillies.jpg">
+                <h2>Green chillies</h2>
             </div>
             <div class="img-box">
-                <img src="images/enclave.webp">
-                <h2>Enclave</h2>
+                <img src="images/Ginger.jpg">
+                <h2>Ginger</h2>
             </div>
             <div class="img-box">
-                <img src="images/fontus.webp">
+                <img src="images/Granites.jpg">
                 <h2>Granites</h2>
             </div>
             <div class="img-box">
-                <img src="images/pristine.webp">
+                <img src="images/Apple.jpg">
                 <h2>Apple</h2>
             </div>
             <div class="img-box">
-                <img src="images/waterway.jpeg">
+                <img src="images/Turmeric.jpg">
                 <h2>Turmeric</h2>
             </div>
         </div>
@@ -247,20 +247,16 @@
         </div>
     </div>
 
-    <div id="strapi">
-
-    </div>
 </body>
 <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
 <script>
     AOS.init();
 </script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 <script>
-    $(document).ready(function() 
-{
-    load();
-});
+    $(document).ready(function () {
+        load();
+    }); -->
 </script>
 <script>
     var indexValue = 1;
@@ -347,36 +343,11 @@
         document.getElementById("logo").style.visibility = "visible";
         document.body.style.overflow = "visible";
     }
-function load(){
-    $.ajax({
-        url: "http://localhost:1342/products",
-        type: 'GET',
-        success: function (res) {
-            console.log(res);
-            // alert(res);
 
-            $.each(res, function(i, item) 
-			{
-				// var dataid = i+1;
-				// if(res[i].cover_image == null)
-				// {
-				// 	var coverimage = "assets/img/default_image.jpg"
-				// }
-				// else
-				// {
-				// 	var coverimage = "https://api.stoneandacres.com"+res[i].cover_image.url;
-				// }		
+    function openPage(pageUrl){
+       window.open(pageUrl);
+     }
 
-				var projecthtml = '<div>'+res[i].product+'</div>';
-				setTimeout(function(){
-				$("#strapi").append(projecthtml);
-				}, 1000 * i );	
-				
-			});
-        }
-    });
-    // document.getElementById("strapi").innerHTML= this.res;
-}
 
 </script>
 

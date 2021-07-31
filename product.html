@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Developers</title>
+    <link rel="stylesheet" href="product.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+</head>
+
+<body>
+    <nav id="nav">
+        <div class="logo">
+            <img src="images/stone.png">
+        </div>
+        <div class="menu-list">
+            <ul>
+                <li>Home</li>
+                <li>About Us</li>
+                <li>Products</li>
+                <li>Contact</li>
+            </ul>
+        </div>
+        <div class="social-icons">
+            <i class="fab fa-facebook-f"></i>
+            <i class="fab fa-instagram"></i>
+            <i class="fas fa-phone-alt"></i>
+        </div>
+    </nav>
+    <div class="small-nav" id="small-nav">
+        <div class="small-logo" id="logo">
+            <img src="images/stone.png">
+        </div>
+        <div class="icon">
+            <i onclick="showlist()" class="fal fa-bars"></i>
+        </div>
+    </div>
+    <div id="small-menu">
+        <i onclick="hidelist()" class="fal fa-times close"></i>
+        <i onclick="hidelist()" class="fal fa-times close-in"></i>
+        <ul>
+            <li>Home</li>
+            <li>About Us</li>
+            <li>Products</li>
+            <li>Contact</li>
+        </ul>
+    </div>
+    <div class="brochure">
+        <button onclick="pdf()">Download Brochure</button>
+    </div>
+    <div class="prod-div">
+        <div class="prod-head">
+            <h1>Products</h1>
+            <h3>Redefining the landscape of traditional realty.</h3>
+        </div>
+        <div class="prod-img" id="strapi">
+
+        </div>
+    </div>
+
+    <div id="footer">
+        <div class="footer">
+            <div>
+                <h6>Products</h6>
+                <ul>
+                    <li>Atmos</li>
+                    <li>Waterway</li>
+                    <li>Pristine</li>
+                    <li>Fontus</li>
+                    <li>Enclave</li>
+                </ul>
+            </div>
+            <div>
+                <h6>Get in Touch</h6>
+                <ul>
+                    <li>contact@stoneandacres.com</li>
+                    <li>Stone & Acres Property Developers</li>
+                    <li>78/2(138/2), L.B Road, Thiruvanmiyur,</li>
+                    <li>Chennai 600 041</li>
+                    <li>+91 9176 441 441</li>
+                </ul>
+            </div>
+            <div>
+                <h6>Connect with Us</h6>
+                <div class="social-icons wd">
+                    <i class="fab fa-facebook-f"></i>
+                    <i class="fab fa-instagram"></i>
+                    <i class="fas fa-phone-alt"></i>
+                </div>
+            </div>
+        </div>
+        <div class="footer-btm" id="footer-btm">
+            <p>© 2020 Stone and Acres Property Developers LLP. All Rights Reserved.</p>
+        </div>
+    </div>
+
+</body>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script>
+    $(document).ready(function () {
+        load();
+    });
+</script>
+
+<script>
+    function load() {
+        $.ajax({
+            url: "http://localhost:1342/products",
+            type: 'GET',
+            success: function (res) {
+                console.log(res[0].prod_image.url);
+
+                $.each(res, function (i, item) {
+
+                    var projecthtml = '<div class="img-box">' +
+                        '<img src="http://localhost:1342' + res[i].prod_image.url + '">' +
+                        '<h2>' + res[i].name + '</h2>' +
+                        '</div>'
+                    $("#strapi").append(projecthtml);
+                });
+            }
+        });
+    }
+
+    function pdf() {
+        $.ajax({
+            url: "http://localhost:1342/pdfs",
+            type: 'GET',
+            success: function (res) {
+                console.log('.................................',res[0].pdf[0].url);
+                window.open('http://localhost:1342/uploads/WATERWAY_E_BROCHURE_1_2_compressed_dd958222e4_7c1ebc8687.pdf')
+            }
+        });
+    }
+
+    function showlist() {
+        document.getElementById("small-menu").style.display = "flex";
+        document.getElementById("logo").style.visibility = "hidden";
+        document.body.style.overflow = "hidden";
+
+    }
+    function hidelist() {
+        document.getElementById("small-menu").style.display = "none";
+        document.getElementById("logo").style.visibility = "visible";
+        document.body.style.overflow = "visible";
+    }
+</script>
