@@ -109,29 +109,29 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 <script>
     $(document).ready(function () {
-        load();
+        // load();
     });
 </script>
 
 <script>
-    function load() {
-        $.ajax({
-            url: "http://localhost:1342/products",
-            type: 'GET',
-            success: function (res) {
-                console.log(res[0].prod_image.url);
+    // function load() {
+    //     $.ajax({
+    //         url: "http://localhost:1342/products",
+    //         type: 'GET',
+    //         success: function (res) {
+    //             console.log(res[0].prod_image.url);
 
-                $.each(res, function (i, item) {
+    //             $.each(res, function (i, item) {
 
-                    var projecthtml = '<div class="img-box">' +
-                        '<img src="http://localhost:1342' + res[i].prod_image.url + '">' +
-                        '<h2>' + res[i].name + '</h2>' +
-                        '</div>'
-                    $("#strapi").append(projecthtml);
-                });
-            }
-        });
-    }
+    //                 var projecthtml = '<div class="img-box">' +
+    //                     '<img src="http://localhost:1342' + res[i].prod_image.url + '">' +
+    //                     '<h2>' + res[i].name + '</h2>' +
+    //                     '</div>'
+    //                 $("#strapi").append(projecthtml);
+    //             });
+    //         }
+    //     });
+    // }
 
     function pdf() {
         $.ajax({
