@@ -149,8 +149,8 @@
             </div>
         </div>
     </div>
-    <div class="picture">
-        <div class="pic">
+    <div class="picture" id="strapi">
+        <!-- <div class="pic">
             <img src="images/ezgif_com_gif_maker_40_987ece2d4b.webp">
             <div class="absolute">
                 <h2>Fontus Enterance</h2>
@@ -177,7 +177,7 @@
                 <h2>Play Ground</h2>
                 <p>PLAY GROUND</p>
             </div>
-        </div>
+        </div> -->
     </div>
     <div class="add">
         <h2>Join the Stone & Acres community.</h2>
@@ -228,13 +228,46 @@
 <script>
     AOS.init();
 </script>
-<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 <script>
     $(document).ready(function () {
         load();
-    }); -->
+    });
 </script>
 <script>
+        function load() {
+        $.ajax({
+            url: "http://localhost:1342/fontuses",
+            type: 'GET',
+            success: function (res) {
+                console.log('.............................',res);
+
+
+                $.each(res, function (i, item) {
+
+                    var projecthtml =   '<div class="pic">'+
+                                            '<img src="http://localhost:1342' + res[i].picture.url + '">' +
+                                            '<div class="absolute">'+
+                                                '<h2>' + res[i].heading + '</h2>' +
+                                                '<p>' + res[i].para + '</p>'+
+                                            '</div>'+
+                                        '</div>'
+                    $("#strapi").append(projecthtml);
+                });
+            }
+        });
+    }
+    function pdf() {
+        $.ajax({
+            url: "http://localhost:1342/pdfs",
+            type: 'GET',
+            success: function (res) {
+                console.log('.................................',res[0].pdf[0].url);
+                window.open('http://localhost:1342/uploads/WATERWAY_E_BROCHURE_1_2_compressed_dd958222e4_7c1ebc8687.pdf')
+            }
+        });
+    }
+
     var indexValue = 1;
     // function banners() {
     //     var banner = document.getElementById("banner"),

@@ -93,7 +93,7 @@ nav div{
 #banner{
     position: relative;
     /* top: -120px; */
-    z-index: -1;
+    z-index: 0;
     /* height: 45vh; */
     display: flex;
     flex-direction: column;
