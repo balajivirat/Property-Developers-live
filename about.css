@@ -87,9 +87,9 @@ nav div{
 .menu-list ul li:hover,.social-icons i:hover{
     color: white;
 }
-.heading{
+/* .heading{
     height: 200vh;
-}
+} */
 #banner{
     position: relative;
     /* top: -120px; */
