@@ -21,14 +21,14 @@
 <body>
     <nav id="nav">
         <div class="logo">
-            <img src="images/stone.png">
+            <img src="images/pnb.png">
         </div>
         <div class="menu-list">
             <ul>
                 <li>Home</li>
-                <li>About Us</li>
-                <li>Products</li>
-                <li>Contact</li>
+                <li onclick="about()">About Us</li>
+                <li><a href="#Projects">Projects</a></li>
+                <li onclick="contact()">Contact</li>
             </ul>
         </div>
         <div class="social-icons">
@@ -40,7 +40,7 @@
 
     <div class="small-nav" id="small-nav">
         <div class="small-logo" id="logo">
-            <img src="images/stone.png">
+            <img src="images/pnb.png">
         </div>
         <div class="icon">
             <i onclick="showlist()" class="fal fa-bars"></i>
@@ -52,7 +52,7 @@
         <ul>
             <li>Home</li>
             <li>About Us</li>
-            <li>Products</li>
+            <li>Projects</li>
             <li>Contact</li>
         </ul>
     </div>
@@ -83,30 +83,30 @@
             <p>Real-time real estate guidance</p>
         </div>
     </div>
-    <div class="prod-div">
+    <div class="prod-div" id="Projects">
         <div class="prod-head">
             <h1>Projects</h1>
             <h3>Redefining the landscape of traditional realty.</h3>
         </div>
         <div class="prod-img">
             <div class="img-box">
-                <img  onclick="openPage('atmos.html')" src="images/card1.jpeg">
+                <img onclick="next(2)" src="images/card1.jpeg">
                 <h2>Atmos</h2>
             </div>
             <div class="img-box">
-                <img  onclick="openPage('waterway.html')" src="images/waterway.jpeg">
+                <img onclick="next(3)" src="images/waterway.jpeg">
                 <h2>Waterway</h2>
             </div>
             <div class="img-box">
-                <img  onclick="openPage('pristine.html')" src="images/pristine.webp">
+                <img onclick="next(4)" src="images/pristine.webp">
                 <h2>Pristine</h2>
             </div>
             <div class="img-box">
-                <img  onclick="openPage('fontus.html')" src="images/fontus.webp">
+                <img onclick="next(5)" src="images/fontus.webp">
                 <h2>Fontus</h2>
             </div>
             <div class="img-box">
-                <img  onclick="openPage('Enclave.html')" src="images/enclave.webp">
+                <img onclick="next(1)" src="images/enclave.webp">
                 <h2>Enclave</h2>
             </div>
         </div>
@@ -120,10 +120,11 @@
         </div>
         <div class="about-txt">
             <h1>About Us</h1>
-            <p>With in-depth knowledge of the real estate industry, Stone & Acres is poised to carve out a niche for
-                itself as one of India’s most transparent and reliable real estate companies.</p>
+            <p>Pnb Realty has officially completed projects in Venkatamangalam around 6 Acres approved
+                projects. The company got an approval to promote township in Mysore in extend of 17.5
+                Acres (developed project by RERA) and it located in Mysore Coorg road, Hobli.</p>
             <div class="about-btn">
-                <button>Read More</button>
+                <button onclick="about()">Read More</button>
                 <button>Contact Us</button>
             </div>
         </div>
@@ -214,7 +215,7 @@
     <div id="footer">
         <div class="footer">
             <div>
-                <h6>Products</h6>
+                <h6>Projects</h6>
                 <ul>
                     <li>Atmos</li>
                     <li>Waterway</li>
@@ -226,11 +227,12 @@
             <div>
                 <h6>Get in Touch</h6>
                 <ul>
-                    <li>contact@stoneandacres.com</li>
-                    <li>Stone & Acres Property Developers</li>
+                    <li>sales@bdcode.in</li>
+                    <li>PnB Realty</li>
                     <li>78/2(138/2), L.B Road, Thiruvanmiyur,</li>
-                    <li>Chennai 600 041</li>
-                    <li>+91 9176 441 441</li>
+                    <li>Gulmohar avenue Velachery main road, Guindy,</li>
+                    <li>Chennai TN 600032</li>
+                    <li>+91 9345760140</li>
                 </ul>
             </div>
             <div>
@@ -243,7 +245,7 @@
             </div>
         </div>
         <div class="footer-btm" id="footer-btm">
-            <p>© 2020 Stone and Acres Property Developers LLP. All Rights Reserved.</p>
+            <p>© 2020 PnB Realty Property Developers LLP. All Rights Reserved.</p>
         </div>
     </div>
 
@@ -344,11 +346,20 @@
         document.body.style.overflow = "visible";
     }
 
-    function openPage(pageUrl){
-       window.open(pageUrl);
-     }
+    function openPage(pageUrl) {
+        window.open(pageUrl);
+    }
 
-
+    function next(id) {
+         localStorage.setItem("id", JSON.stringify(id));
+        document.location.href = "projects.html";
+    }
+    function about() {
+        document.location.href = "aboutus.html";
+    }
+    function contact() {
+        document.location.href = "contactUs.html";
+    }
 </script>
 
 </html>

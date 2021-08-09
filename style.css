@@ -2,6 +2,11 @@ body{
     margin: 0;
     padding: 0;
     font-family: 'Nunito Sans', sans-serif;
+    scroll-behavior: smooth;
+}
+a{
+    color: #fff;
+    text-decoration: none;
 }
 ::-webkit-scrollbar{
     width: 5px;
@@ -20,7 +25,7 @@ nav{
     justify-content: space-between;
     height: 120px;
     align-items: center;
-    color: #fffdfd;
+    color: #989898;
 }
 .small-nav,#small-menu{
     display: none;
@@ -55,7 +60,7 @@ nav div{
     width: 42%;
     height: 80%;
     cursor: pointer;
-    filter: invert(1);
+    filter: invert(0);
 }
 .menu-list{
     width: 40%;
@@ -207,8 +212,10 @@ nav div{
     position: relative;
 }
 .color-img{
-    background: url(images/section-image-1.jpg);
-    background-size: contain;
+    background: url(images/pnb.png);
+    background-repeat: no-repeat;
+    background-size: auto;
+    filter: invert(0);
     background-position: center;
     position: absolute;
     bottom: 25px;

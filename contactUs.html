@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <link rel="stylesheet" href="contactUs.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+</head>
+
+<body>
+    <nav id="nav">
+        <div class="logo">
+            <img onclick="home()" src="images/pnb.png">
+        </div>
+        <div class="menu-list">
+            <ul>
+                <li onclick="home()">Home</li>
+                <li onclick="about()">About Us</li>
+                <li>Projects</li>
+                <li onclick="contact()">Contact</li>
+            </ul>
+        </div>
+        <div class="social-icons">
+            <i class="fab fa-facebook-f"></i>
+            <i class="fab fa-instagram"></i>
+            <i class="fas fa-phone-alt"></i>
+        </div>
+    </nav>
+
+    <div class="small-nav" id="small-nav">
+        <div class="small-logo" id="logo">
+            <img src="images/stone.png">
+        </div>
+        <div class="icon">
+            <i onclick="showlist()" class="fal fa-bars"></i>
+        </div>
+    </div>
+    <div id="small-menu">
+        <i onclick="hidelist()" class="fal fa-times close"></i>
+        <i onclick="hidelist()" class="fal fa-times close-in"></i>
+        <ul>
+            <li>Home</li>
+            <li>About Us</li>
+            <li>Products</li>
+            <li>Contact</li>
+        </ul>
+    </div>
+    <div id="banner">
+        <h1>Contact Us</h1>
+    </div>
+
+    <div class="aboutus">
+        <div class="aboutUs-field">
+            <h2>Drop us a line</h2>
+            <p>Send us an enquiry and a member of our team will get in touch with you at the earliest.</p>
+            <div class="form">
+                <form action="">
+                    <input type="text" placeholder="Name">
+                    <input type="text" placeholder="Occupation">
+                    <input type="text" placeholder="Email Address">
+                    <input type="text" placeholder="Company Name">
+                    <input type="text" placeholder="Mobile Number">
+                    <input type="text" placeholder="Message">
+                        <div class="about-btn">
+                            <button>Send Message</button>
+                            <button>Call Us</button>
+                        </div>
+                    
+                </form>
+            </div>
+        </div>
+        <div class="location">
+            <div class="location-div">
+                <i class="fa fa-map-marker-alt"></i>
+                <h2>Chennai</h2>
+            </div>
+            <p>+91 9345760140</p>
+            <p>sales@bdcode.in</p>
+        </div>
+    </div>
+
+
+    <div id="footer">
+        <div class="footer">
+            <div>
+                <h6>Projects</h6>
+                <ul>
+                    <li>Atmos</li>
+                    <li>Waterway</li>
+                    <li>Pristine</li>
+                    <li>Fontus</li>
+                    <li>Enclave</li>
+                </ul>
+            </div>
+            <div>
+                <h6>Get in Touch</h6>
+                <ul>
+                    <li>sales@bdcode.in</li>
+                    <li>PnB Realty</li>
+                    <li>78/2(138/2), L.B Road, Thiruvanmiyur,</li>
+                    <li>Gulmohar avenue Velachery main road, Guindy,</li>
+                    <li>Chennai TN 600032</li>
+                    <li>+91 9345760140</li>
+                </ul>
+            </div>
+            <div>
+                <h6>Connect with Us</h6>
+                <div class="social-icons wd">
+                    <i class="fab fa-facebook-f"></i>
+                    <i class="fab fa-instagram"></i>
+                    <i class="fas fa-phone-alt"></i>
+                </div>
+            </div>
+        </div>
+        <div class="footer-btm" id="footer-btm">
+            <p>© 2020 PnB Realty Property Developers LLP. All Rights Reserved.</p>
+        </div>
+    </div>
+</body>
+<script>
+        function showlist() {
+        document.getElementById("small-menu").style.display = "flex";
+        document.getElementById("logo").style.visibility = "hidden";
+        document.body.style.overflow = "hidden";
+
+    }
+    function hidelist() {
+        document.getElementById("small-menu").style.display = "none";
+        document.getElementById("logo").style.visibility = "visible";
+        document.body.style.overflow = "visible";
+    }
+    var Yvalue = 0;
+    var Yvalues = 0;
+    window.addEventListener("scroll", function () {
+        var nav = window.pageYOffset;
+        console.log(window.pageYOffset);
+        if (nav > 450) {
+            document.getElementById("nav").classList.add("fixed");
+        } else {
+            document.getElementById("nav").classList.remove("fixed");
+        }
+        var footer = window.pageYOffset;
+        if (footer > 3496) {
+            document.getElementById("footer").classList.add("sticky");
+        } else {
+            document.getElementById("footer").classList.remove("sticky")
+        }
+        var smallNav = window.pageYOffset;
+        if (smallNav > 330) {
+            document.getElementById("small-nav").classList.add("fixed");
+        } else {
+            document.getElementById("small-nav").classList.remove("fixed");
+        }
+    });
+    function about() {
+        document.location.href = "aboutus.html";
+    }
+    function contact() {
+        document.location.href = "contactUs.html";
+    }
+    function home() {
+        document.location.href = "index.html";
+    }
+</script>
