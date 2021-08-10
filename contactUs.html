@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
         integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 </head>
 
 <body>
@@ -27,7 +28,7 @@
             <ul>
                 <li onclick="home()">Home</li>
                 <li onclick="about()">About Us</li>
-                <li>Projects</li>
+                <li onclick="project()">Projects</li>
                 <li onclick="contact()">Contact</li>
             </ul>
         </div>
@@ -40,20 +41,19 @@
 
     <div class="small-nav" id="small-nav">
         <div class="small-logo" id="logo">
-            <img src="images/stone.png">
+            <img src="images/pnb.png">
         </div>
         <div class="icon">
             <i onclick="showlist()" class="fal fa-bars"></i>
         </div>
     </div>
     <div id="small-menu">
-        <i onclick="hidelist()" class="fal fa-times close"></i>
         <i onclick="hidelist()" class="fal fa-times close-in"></i>
         <ul>
-            <li>Home</li>
-            <li>About Us</li>
-            <li>Products</li>
-            <li>Contact</li>
+            <li onclick="home()">Home</li>
+            <li onclick="about()">About Us</li>
+            <li>Projects</li>
+            <li onclick="contact()">Contact</li>
         </ul>
     </div>
     <div id="banner">
@@ -65,18 +65,17 @@
             <h2>Drop us a line</h2>
             <p>Send us an enquiry and a member of our team will get in touch with you at the earliest.</p>
             <div class="form">
-                <form action="">
-                    <input type="text" placeholder="Name">
-                    <input type="text" placeholder="Occupation">
-                    <input type="text" placeholder="Email Address">
-                    <input type="text" placeholder="Company Name">
-                    <input type="text" placeholder="Mobile Number">
-                    <input type="text" placeholder="Message">
-                        <div class="about-btn">
-                            <button>Send Message</button>
-                            <button>Call Us</button>
-                        </div>
-                    
+                <form method="POST" id="myform">
+                    <input type="text" placeholder="Name" id="name" name="name" required>
+                    <input type="text" placeholder="Occupation" id="occupation" name="occupation">
+                    <input type="text" placeholder="Email Address" id="email" name="email">
+                    <input type="text" placeholder="Company Name" id="company" name="company">
+                    <input type="text" placeholder="Mobile Number" id="mobile" name="mobile">
+                    <input type="text" placeholder="Message" id="message" name="message">
+                    <div class="about-btn">
+                        <button type="submit" id="submit">Send Message</button>
+                        <button>Call Us</button>
+                    </div>
                 </form>
             </div>
         </div>
@@ -124,12 +123,14 @@
             </div>
         </div>
         <div class="footer-btm" id="footer-btm">
+            <button>Website Design by bd code_</button>
             <p>© 2020 PnB Realty Property Developers LLP. All Rights Reserved.</p>
         </div>
     </div>
 </body>
+<script src="https://smtpjs.com/v3/smtp.js"></script>
 <script>
-        function showlist() {
+    function showlist() {
         document.getElementById("small-menu").style.display = "flex";
         document.getElementById("logo").style.visibility = "hidden";
         document.body.style.overflow = "hidden";
@@ -144,7 +145,6 @@
     var Yvalues = 0;
     window.addEventListener("scroll", function () {
         var nav = window.pageYOffset;
-        console.log(window.pageYOffset);
         if (nav > 450) {
             document.getElementById("nav").classList.add("fixed");
         } else {
@@ -172,4 +172,58 @@
     function home() {
         document.location.href = "index.html";
     }
+    function project() {
+        document.location.href = "index.html".after("#Projects");
+    }
+
+
+    $("#myform").on("submit", function (event) {
+        event.preventDefault();
+        var name = $("#name").val();
+        var email = $("#email").val();
+        var mobile = $("#mobile").val();
+        var message = $("#message").val();
+        var location = $("#location").val();
+        var company = $("#company").val();
+        mailbody =
+            '<html><div style="width: 100%;height: 100%;justify-content: center;align-items: center;font-family: Nunito Sans, sans-serif;font-size: 14px;"><div style="width:100%;max-width:900px;padding-top:2rem;"><div align="center" style="padding-left:30px;padding-right:30px;"></div><div style="font-size:16px;padding-left: 30px; padding-right: 30px;line-height:200%; margin-bottom:3rem" align="left"><div style="font-size:16px;font-family:Josefin Sans, sans-serif!important; width:100%; padding-top:20px;"><table width="100%" border="0" cellpadding="2" cellspacing="2"><tr><td  style="background-color:#efefef;width:30%;padding:5px 20px;">Name</td><td align="left" style="width:70%;padding:5px 20px;background-color: rgba(0,0,0,0.03);font-weight:500;color:#000000">' +
+            name +
+            '</td></tr><tr><td  style="background-color:#efefef;width:30%;padding:5px 20px;">Email</td><td align="left" style="width:70%;padding:5px 20px;background-color: rgba(0,0,0,0.03);font-weight:500;color:#000000">' +
+            email +
+            '</td></tr><tr><td  style="background-color:#efefef;width:30%;padding:5px 20px;">Mobile</td><td align="left" style="width:70%;padding:5px 20px;background-color: rgba(0,0,0,0.03);font-weight:500;color:#000000">' +
+            mobile +
+            '</td></tr><tr><td  style="background-color:#efefef;width:30%;padding:5px 20px;">Location</td><td align="left" style="width:70%;padding:5px 20px;background-color: rgba(0,0,0,0.03);font-weight:500;color:#000000">' +
+            location +
+            '</td></tr><tr><td  style="background-color:#efefef;width:30%;padding:5px 20px;">Company Name</td><td align="left" style="width:70%;padding:5px 20px;background-color: rgba(0,0,0,0.03);font-weight:500;color:#000000">' +
+            company +
+            '</td></tr><tr><td  style="background-color:#efefef;width:30%;padding:5px 20px;">Message</td><td align="left" style="width:70%;padding:5px 20px;background-color: rgba(0,0,0,0.03);font-weight:500;color:#000000">' +
+            message +
+            '</td></tr></table></div></div><div style="padding:5px 30px; background-color:#2D323D;" align="right"></div></div></div></html>';
+        $("#submit").prop("disabled", true);
+        Email.send({
+            Host: "mail.ezveb.com",
+            Username: "prabha@sis.in",
+            Password: "Prabha1990",
+            To: "devaprakash.m1997@gmail.com",
+            From: "prabha@sis.in",
+            Subject: "content Enquiry",
+            Body: mailbody,
+        }).then(function (message) {
+            console.log(message);
+            if (message == "OK") {
+                $("#submit").html("Enquiry Sent");
+                $("#myform")[0].reset();
+            } else {
+            }
+        });
+    });
+
+    $(document).ready(function () {
+        $("#mobile").keypress(function (e) {
+            if (e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57)) {
+                // $("#errmsg").html("Digits Only").show().fadeOut("slow");
+                return false;
+            }
+        });
+    });
 </script>

@@ -40,28 +40,27 @@
 
     <div class="small-nav" id="small-nav">
         <div class="small-logo" id="logo">
-            <img src="images/stone.png">
+            <img onclick="home()" src="images/pnb.png">
         </div>
         <div class="icon">
             <i onclick="showlist()" class="fal fa-bars"></i>
         </div>
     </div>
     <div id="small-menu">
-        <i onclick="hidelist()" class="fal fa-times close"></i>
         <i onclick="hidelist()" class="fal fa-times close-in"></i>
         <ul>
-            <li>Home</li>
-            <li>About Us</li>
+            <li onclick="home()">Home</li>
+            <li onclick="about()">About Us</li>
             <li>Projects</li>
-            <li>Contact</li>
+            <li onclick="contact()">Contact</li>
         </ul>
     </div>
     <div id="strapi">
 
     </div>
     <div class="add">
-        <h2>Join the Stone & Acres community.</h2>
-        <p>Whether it’s buying, selling or renting, Stone & Acres provides expert inputs and key insights.</p>
+        <h2>Join the PnB Realty community.</h2>
+        <p>Whether it’s buying, selling or renting, PnB Realty provides expert inputs and key insights.</p>
         <div class="brochure">
             <button>Call Us</button>
         </div>
@@ -100,6 +99,7 @@
             </div>
         </div>
         <div class="footer-btm" id="footer-btm">
+            <button>Website Design by bd code_</button>
             <p>© 2020 PnB Realty Property Developers LLP. All Rights Reserved.</p>
         </div>
     </div>
@@ -112,168 +112,155 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 <script>
     $(document).ready(function () {
-       var id = localStorage.getItem("id");
+        var id = localStorage.getItem("id");
         load(id);
     });
 </script>
 <script>
-        function load(id) {
-            console.log(id);
+    function load(id) {
+        console.log(id);
         $.ajax({
             url: `http://localhost:1342/enclaves/${id}`,
             type: 'GET',
             success: function (res) {
-                console.log('.............................',res);
+                console.log('.............................', res);
 
 
                 // $.each(res, function (i, item) {
 
-                    var projecthtml =       '<div id="banner">'+
-                                                '<h1>'+ res.heading +'</h1>'+
-                                                '<span>'+ res.para +'</span>'+
-                                                '<div class="brochure">'+
-                                                    '<button onclick="pdf('+id+')">Download Brochure</button>'+
-                                                '</div>'+
-                                            '</div>'+
-                                            '<div class="overview">'+
-                                                '<div class="overview-left">'+
-                                                    '<img src="http://localhost:1342' + res.picture.url + '">' +
-                                                '</div>'+
-                                                '<div class="overview-right">'+
-                                                    '<h2>Overview</h2>'+
-                                                    '<ul>'+res.list +
-                                                    '</ul>'+
-                                                '</div>'+
-                                            '</div>'+
-                                            '<div class="prod-div">'+
+                var projecthtml = '<div id="banner">' +
+                    '<h1>' + res.heading + '</h1>' +
+                    '<span>' + res.para + '</span>' +
+                    '<div class="brochure">' +
+                    '<button onclick="pdf(' + id + ')">Download Brochure</button>' +
+                    '</div>' +
+                    '</div>' +
+                    '<div class="overview">' +
+                    '<div class="overview-left">' +
+                    '<img src="http://localhost:1342' + res.picture.url + '">' +
+                    '</div>' +
+                    '<div class="overview-right">' +
+                    '<h2>Overview</h2>' +
+                    '<ul>' + res.list +
+                    '</ul>' +
+                    '</div>' +
+                    '</div>' +
+                    '<div class="prod-div">' +
 
-                                                '<div class="prod-img">'+
-                                                    '<div class="img-box">'+
-                                                        '<i class="material-icons">aspect_ratio</i>'+
-                                                        '<h3>Extent</h3>'+
-                                                        '<p>'+ res.extent +'</p>'+
-                                                    '</div>'+
-                                                    '<div class="img-box">'+
-                                                        '<i class="material-icons">class</i>'+
-                                                        '<h3>Approval Number</h3>'+
-                                                        '<p>'+ res.approval +'</p>'+
-                                                    '</div>'+
-                                                    '<div class="img-box">'+
-                                                        '<i class="material-icons">dashboard</i>'+
-                                                        '<h3>Plots</h3>'+
-                                                        '<p>'+ res.plots +'</p>'+
-                                                    '</div>'+
-                                                    '<div class="img-box">'+
-                                                        '<i class="material-icons">today</i>'+
-                                                        '<h3>Date of Launch</h3>'+
-                                                        '<p>'+ res.date +'</p>'+
-                                                    '</div>'+
-                                                    '<div class="img-box">'+
-                                                        '<i class="material-icons">account_balance</i>'+
-                                                        '<h3>RERA Approval Number</h3>'+
-                                                        '<p>'+ res.rera +'</p>'+
-                                                    '</div>'+
-                                                '</div>'+
-                                            '</div>'+
-                                            '<div class="highlight">'+
-                                                '<div class="highlight-top">'+
-                                                    '<h2>Highlights</h2>'+
-                                                '</div>'+
-                                                '<div class="highlight-bottom">'+
-                                                    '<div class="highlight-left">'+
-                                                        '<h2>'+ res.choose +'</h2>'+
-                                                        '<p>'+ res.paragraph +'</p>'+
-                                                    '</div>'+
-                                                    '<div class="highlight-right">'+
-                                                        '<div class="border">'+
-                                                            '<div class="border-1">'+
-                                                                '<h3>Location Proximity</h3>'+
-                                                                '<span>'+ res.location +'</span>'+
-                                                            '</div>'+
-                                                        '</div>'+
-                                                        '<div class="border">'+
-                                                            '<div class="border-2">'+
-                                                                '<h3>Infrastructure and Development</h3>'+
-                                                                '<span>'+ res.infrastructure +'</span>'+
-                                                            '</div>'+
-                                                        '</div>'+
-                                                        '<div class="border">'+
-                                                            '<div class="border-3">'+
-                                                                '<h3>Air Quality</h3>'+
-                                                                '<span>'+ res.air +'</span>'+
-                                                            '</div>'+
-                                                        '</div>'+
-                                                        '<div class="border">'+
-                                                            '<div class="border-4">'+
-                                                                '<h3>Water Supply</h3>'+
-                                                                '<span>'+ res.water +'</span>'+
-                                                            '</div>'+
-                                                        '</div>'+
-                                                    '</div>'+
-                                                '</div>'+
-                                            '</div>'+
-                                            '<div class="picture">'+
-                                                '<div class="pic">'+
-                                                    '<img src="http://localhost:1342' + res.proj_img[0].url + '">' +
-                                                    '<div class="absolute">'+
-                                                        '<h2>'+ res.proj_head +'</h2>'+
-                                                        '<p>'+ res.proj_para +'</p>'+
-                                                    '</div>'+
-                                                '</div>'+
-                                                '<div class="pic">'+
-                                                    '<img src="http://localhost:1342' + res.proj_img[1].url + '">' +
-                                                    '<div class="absolute">'+
-                                                        '<h2>'+ res.proj_head_1 +'</h2>'+
-                                                        '<p>'+ res.proj_para_1 +'</p>'+
-                                                    '</div>'+
-                                                '</div>'+
-                                                '<div class="pic">'+
-                                                    '<img src="http://localhost:1342' + res.proj_img[2].url + '">' +
-                                                    '<div class="absolute">'+
-                                                        '<h2>'+ res.proj_head_2 +'</h2>'+
-                                                        '<p>'+ res.proj_para_2 +'</p>'+
-                                                    '</div>'+
-                                                '</div>'+
-                                                '<div class="pic">'+
-                                                    '<img src="http://localhost:1342' + res.proj_img[3].url + '">' +
-                                                    '<div class="absolute">'+
-                                                        '<h2>'+ res.proj_head_3 +'</h2>'+
-                                                        '<p>'+ res.proj_para_3 +'</p>'+
-                                                    '</div>'+
-                                                '</div>'+
-                                            '</div>'
+                    '<div class="prod-img">' +
+                    '<div class="img-box">' +
+                    '<i class="material-icons">aspect_ratio</i>' +
+                    '<h3>Extent</h3>' +
+                    '<p>' + res.extent + '</p>' +
+                    '</div>' +
+                    '<div class="img-box">' +
+                    '<i class="material-icons">class</i>' +
+                    '<h3>Approval Number</h3>' +
+                    '<p>' + res.approval + '</p>' +
+                    '</div>' +
+                    '<div class="img-box">' +
+                    '<i class="material-icons">dashboard</i>' +
+                    '<h3>Plots</h3>' +
+                    '<p>' + res.plots + '</p>' +
+                    '</div>' +
+                    '<div class="img-box">' +
+                    '<i class="material-icons">today</i>' +
+                    '<h3>Date of Launch</h3>' +
+                    '<p>' + res.date + '</p>' +
+                    '</div>' +
+                    '<div class="img-box">' +
+                    '<i class="material-icons">account_balance</i>' +
+                    '<h3>RERA Approval Number</h3>' +
+                    '<p>' + res.rera + '</p>' +
+                    '</div>' +
+                    '</div>' +
+                    '</div>' +
+                    '<div class="highlight">' +
+                    '<div class="highlight-top">' +
+                    '<h2>Highlights</h2>' +
+                    '</div>' +
+                    '<div class="highlight-bottom">' +
+                    '<div class="highlight-left">' +
+                    '<h2>' + res.choose + '</h2>' +
+                    '<p>' + res.paragraph + '</p>' +
+                    '</div>' +
+                    '<div class="highlight-right">' +
+                    '<div class="border">' +
+                    '<div class="border-1">' +
+                    '<h3>Location Proximity</h3>' +
+                    '<span>' + res.location + '</span>' +
+                    '</div>' +
+                    '</div>' +
+                    '<div class="border">' +
+                    '<div class="border-2">' +
+                    '<h3>Infrastructure and Development</h3>' +
+                    '<span>' + res.infrastructure + '</span>' +
+                    '</div>' +
+                    '</div>' +
+                    '<div class="border">' +
+                    '<div class="border-3">' +
+                    '<h3>Air Quality</h3>' +
+                    '<span>' + res.air + '</span>' +
+                    '</div>' +
+                    '</div>' +
+                    '<div class="border">' +
+                    '<div class="border-4">' +
+                    '<h3>Water Supply</h3>' +
+                    '<span>' + res.water + '</span>' +
+                    '</div>' +
+                    '</div>' +
+                    '</div>' +
+                    '</div>' +
+                    '</div>' +
+                    '<div class="picture">' +
+                    '<div class="pic">' +
+                    '<img src="http://localhost:1342' + res.proj_img[0].url + '">' +
+                    '<div class="absolute">' +
+                    '<h2>' + res.proj_head + '</h2>' +
+                    '<p>' + res.proj_para + '</p>' +
+                    '</div>' +
+                    '</div>' +
+                    '<div class="pic">' +
+                    '<img src="http://localhost:1342' + res.proj_img[1].url + '">' +
+                    '<div class="absolute">' +
+                    '<h2>' + res.proj_head_1 + '</h2>' +
+                    '<p>' + res.proj_para_1 + '</p>' +
+                    '</div>' +
+                    '</div>' +
+                    '<div class="pic">' +
+                    '<img src="http://localhost:1342' + res.proj_img[2].url + '">' +
+                    '<div class="absolute">' +
+                    '<h2>' + res.proj_head_2 + '</h2>' +
+                    '<p>' + res.proj_para_2 + '</p>' +
+                    '</div>' +
+                    '</div>' +
+                    '<div class="pic">' +
+                    '<img src="http://localhost:1342' + res.proj_img[3].url + '">' +
+                    '<div class="absolute">' +
+                    '<h2>' + res.proj_head_3 + '</h2>' +
+                    '<p>' + res.proj_para_3 + '</p>' +
+                    '</div>' +
+                    '</div>' +
+                    '</div>'
 
-                    $("#strapi").append(projecthtml);
+                $("#strapi").append(projecthtml);
                 // });
             }
         });
     }
-    
+
     function pdf(id) {
         $.ajax({
-            url: `http://localhost:1342/project-pdfs/${id}`,
+            url: `http://localhost:1342/pdfs/${id}`,
             type: 'GET',
             success: function (res) {
-                console.log('pfd.................................',res);
-                console.log('pfd.................................',res.pdf[0].url);
-                window.open('http://localhost:1342'+res.pdf[0].url);
+                console.log('pfd.................................', res);
+                console.log('pfd.................................', res.pdf[0].url);
+                window.open('http://localhost:1342' + res.pdf[0].url);
             }
         });
     }
 
-    var indexValue = 1;
-    // function banners() {
-    //     var banner = document.getElementById("banner"),
-    //         images = banner.getElementsByTagName("h1");
-    //     setTimeout(banners, 5000);
-    //     for (let index = 0; index < images.length; index++) {
-    //         images[index].style.display = "none";
-    //     }
-    //     if (indexValue > images.length) { indexValue = 1 }
-    //     images[indexValue - 1].style.display = "block";
-    //     indexValue++;
-    // }
-    // banners();
 
     var Yvalue = 0;
     var Yvalues = 0;
@@ -297,43 +284,8 @@
             document.getElementById("small-nav").classList.remove("fixed");
         }
     });
-    // function slider() {
-    //     var slider = document.getElementById("slider");
-    //     var div = slider.getElementsByTagName("div");
-    //     for (let index = 0; index < div.length; index++) {
-    //         div[index].style.display = "none";
-    //         div[0].style.display = "flex";
-    //     }
-    // }
-    // slider();
-    var increIndex = 1;
-    function incre() {
-        var slider = document.getElementById("slider");
-        var div = slider.getElementsByTagName("div");
-        for (let index = 0; index < div.length; index++) {
-            div[index].style.display = "none";
-        }
-        if (increIndex > div.length) {
-            increIndex = 1;
-        }
-        console.log(increIndex);
-        div[increIndex - 1].style.display = "flex";
-        increIndex++;
-    }
-    var decreIndex = 1;
-    function decre() {
-        var slider = document.getElementById("slider");
-        var div = slider.getElementsByTagName("div");
-        for (let index = 0; index < div.length; index++) {
-            div[index].style.display = "none";
-        }
-        if (decreIndex == 0) {
-            decreIndex = div.length;
-        }
-        console.log(decreIndex);
-        div[decreIndex - 1].style.display = "flex";
-        decreIndex--;
-    }
+
+
     function showlist() {
         document.getElementById("small-menu").style.display = "flex";
         document.getElementById("logo").style.visibility = "hidden";
@@ -346,10 +298,10 @@
         document.body.style.overflow = "visible";
     }
 
-    function openPage(pageUrl){
-       window.open(pageUrl);
-     }
-     function about() {
+    function openPage(pageUrl) {
+        window.open(pageUrl);
+    }
+    function about() {
         document.location.href = "aboutus.html";
     }
     function contact() {

@@ -53,8 +53,8 @@ nav div{
     margin-left: -50px;
 }
 .logo img{
-    width: 42%;
-    height: 80%;
+    width: 50%;
+    object-fit: contain;
     cursor: pointer;
     filter: invert(0);
 }
@@ -234,6 +234,15 @@ input{
     margin-bottom: 30px;
     border-width: 0;
     border-bottom-width: 1px;
+    outline: none;
+}
+.footer-btm button{
+    width: 250px;
+    height: 45px;
+    border: none;
+    background: linear-gradient(270deg,#7b1fa2, #4762ff);
+    color: white;
+    font-size: 17px;
 }
 .aboutus p{
     font-size: 16px;
@@ -288,7 +297,7 @@ input{
         align-items: center;
       }
       .small-nav img{
-        filter: invert(1);
+        filter: invert(0);
         width: 100%;
       }
       .small-logo{
@@ -312,6 +321,53 @@ input{
         align-items: center;
         justify-content: center;
       }
+      .footer-btm {
+        text-align: center;
+        background: #2d323d;
+        color: #98a2aa;
+        border-top: 1px solid;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+    }
+      input {
+        width: 100%;
+        margin-right: 2%;
+        height: 50px;
+        border: 1px solid #d5d6de;
+        color: #b7b9c4;
+        margin-bottom: 30px;
+        border-width: 0;
+        border-bottom-width: 1px;
+    }
+    .aboutus p {
+        font-size: 16px;
+        line-height: 1.9em;
+        color: #828282;
+        width: 100%;
+    }
+    #banner {
+        top: 0px;
+        height: 30vh;
+    }
+    .aboutUs-field {
+        width: 80%;
+        height: 85%;
+        background-color: #fff;
+        padding-left: 6%;
+        padding-right: 6%;
+        padding-top: 4%;
+        position: absolute;
+        top: -22%;
+    }
+    .aboutus h2 {
+        font-size: 32px;
+        line-height: 1.4;
+        letter-spacing: 0;
+        color: #060221;
+        margin: 0;
+    }
       .close-in{
         position: absolute;
         top: 90px;
@@ -364,10 +420,6 @@ input{
         display: flex;
         flex-direction: column;
         justify-content: space-around;
-      }
-      #banner {
-        top: 0px;
-        height: 44vh;
       }
       .card-div{
         flex-direction: column;
@@ -584,9 +636,40 @@ input{
       width: 94%;
     }
     .small-nav img{
-        filter: invert(1);
+        filter: invert(0);
         width: 100%;
       }
+      .aboutUs-field {
+        width: 80%;
+        height: 65%;
+        background-color: #fff;
+        padding-left: 6%;
+        padding-right: 6%;
+        padding-top: 4%;
+        position: absolute;
+        top: -8%;
+    }
+    #banner {
+        position: relative;
+        z-index: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background: #1a1b1f;
+        padding-bottom: 12%;
+        padding-top: 8%;
+    }
+    .location {
+        height: 20vh;
+    }
+    .aboutus {
+        background-color: #f4f5f8;
+        height: 80vh;
+        position: relative;
+        display: flex;
+        align-items: flex-end;
+        justify-content: center;
+    }
     .small-logo {
         width: 15%;
     }

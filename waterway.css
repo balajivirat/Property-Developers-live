@@ -53,8 +53,8 @@ nav div{
     margin-left: -50px;
 }
 .logo img{
-    width: 42%;
-    height: 80%;
+    width: 50%;
+    object-fit: contain;
     cursor: pointer;
     filter: invert(0);
 }
@@ -110,27 +110,22 @@ nav div{
     margin-bottom: 30px;
     color: #808080;
 }
-/* #banner img{
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center;
-    position: absolute;
-    animation: opacity 1s linear;
-} */
+.footer-btm button{
+    width: 250px;
+    height: 45px;
+    border: none;
+    background: linear-gradient(270deg,#7b1fa2, #4762ff);
+    color: white;
+    font-size: 17px;
+}
 .brochure{
     width: 100%;
-    /* display: flex; */
-    /* justify-content: flex-start; */
     display: flex;
     flex-direction: column;
     align-items: center;
     padding-bottom: 30px;
 }
 .brochure button{
-    /* position: fixed; */
-    /* top: 6%; */
-    /* left: 17%; */
     background: linear-gradient(90deg,#7b1fa2, #4762ff);
     padding: 1%;
     color: #fff;
@@ -747,9 +742,19 @@ nav div{
         align-items: center;
       }
       .small-nav img{
-        filter: invert(1);
+        filter: invert(0);
         width: 100%;
       }
+      .footer-btm {
+        text-align: center;
+        background: #2d323d;
+        color: #98a2aa;
+        border-top: 1px solid;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+    }
       .small-logo{
         width: 30%;
         margin-left: 20px;

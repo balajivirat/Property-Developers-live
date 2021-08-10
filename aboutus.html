@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ATMOS</title>
+    <title>About Us</title>
     <link rel="stylesheet" href="about.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -40,20 +40,19 @@
 
     <div class="small-nav" id="small-nav">
         <div class="small-logo" id="logo">
-            <img src="images/stone.png">
+            <img src="images/pnb.png">
         </div>
         <div class="icon">
             <i onclick="showlist()" class="fal fa-bars"></i>
         </div>
     </div>
     <div id="small-menu">
-        <i onclick="hidelist()" class="fal fa-times close"></i>
         <i onclick="hidelist()" class="fal fa-times close-in"></i>
         <ul>
-            <li>Home</li>
+            <li onclick="home()">Home</li>
             <li>About Us</li>
-            <li>Products</li>
-            <li>Contact</li>
+            <li>projects</li>
+            <li onclick="contact()">Contact</li>
         </ul>
     </div>
     <div id="banner">
@@ -63,17 +62,31 @@
 
     <div class="aboutus">
         <h1>About the company:</h1>
-        <p>PnB group called as Panneerdas and Babudas group which was founded in 2002 for more than 20 years a grown simply beginning to a corporate organisation. Pnb group in the field of Electronic Software field, Infrastructure projects, Construction, Residential township promotion, Hotels & Resorts and Export and Import.</p>
-        <p>Pnb Exporters it is an import and export company of spicy commodities, exporting spices to Srilanka, Singapore and Dubai and we also experts in FMCG, metals, Construction materials across the globe. Pnb exports also imports dhal From Turkey.</p>
+        <p>PnB group called as Panneerdas and Babudas group which was founded in 2002 for more than 20 years a grown
+            simply beginning to a corporate organisation. Pnb group in the field of Electronic Software field,
+            Infrastructure projects, Construction, Residential township promotion, Hotels & Resorts and Export and
+            Import.</p>
+        <p>Pnb Exporters it is an import and export company of spicy commodities, exporting spices to Srilanka,
+            Singapore and Dubai and we also experts in FMCG, metals, Construction materials across the globe. Pnb
+            exports also imports dhal From Turkey.</p>
         <h1>About the Promoters:</h1>
-        <p>Company was promoted by VGP Babudas alternator experience in retail business in the field of Electronics, Retail stores, and Real estate Township promoters, Flat developers, Amusement park and Finance business, Exporters with this experience has started as a simpleorganisation to a corporate entity.</p>
+        <p>Company was promoted by VGP Babudas alternator experience in retail business in the field of Electronics,
+            Retail stores, and Real estate Township promoters, Flat developers, Amusement park and Finance business,
+            Exporters with this experience has started as a simpleorganisation to a corporate entity.</p>
         <h1>PnB Realty Pvt Ltd:</h1>
-        <p>Pnb realty has officially completed projects in Venkatamangalam around 6 Acres approved projects. The company got an approval to promote township in Mysore in extend of 17.5 Acres (developed project by RERA) and it located in Mysore coorg road, Hobli.</p>
-        <p>Company is now promoting another unique full developed project in our prosperity at Venkatamangalam in the vicinity of Medavakkam and new sub of Metropolitan like VIT and Tagore college. Then layout has fully approved and all infrastructures like Black Thoar Road,Layouts, Water connection, Electricity, Drainage,  Park. The project is approved by RERA.</p>
+        <p>Pnb realty has officially completed projects in Venkatamangalam around 6 Acres approved projects. The company
+            got an approval to promote township in Mysore in extend of 17.5 Acres (developed project by RERA) and it
+            located in Mysore coorg road, Hobli.</p>
+        <p>Company is now promoting another unique full developed project in our prosperity at Venkatamangalam in the
+            vicinity of Medavakkam and new sub of Metropolitan like VIT and Tagore college. Then layout has fully
+            approved and all infrastructures like Black Thoar Road,Layouts, Water connection, Electricity, Drainage,
+            Park. The project is approved by RERA.</p>
         <h1>Pnb Exporters Pvt Ltd:</h1>
         <p>We exports best quality of chillies to Srilanka, Singapore and Dubai.</p>
-        <p>We exports green chillies to Srilankan Society groups in Colombo and also we Imports best quality of Dhal from Turkey to Indian Market.</p>
-        <p>Our Quality, Best rate, Reliability and performance represents our moral “your requirements our commitment.</p>
+        <p>We exports green chillies to Srilankan Society groups in Colombo and also we Imports best quality of Dhal
+            from Turkey to Indian Market.</p>
+        <p>Our Quality, Best rate, Reliability and performance represents our moral “your requirements our commitment.
+        </p>
         <h1>Business Opportunities</h1>
         <p class="aboutus-p">PnB invites like-minded people to promote across the World.</p>
     </div>
@@ -82,7 +95,7 @@
     <div class="ask-div">
         <div class="ask-head">
             <h1>Ready to get started?
-                Join the Stone & Acres community.</h1>
+                Join the PnB Realty community.</h1>
         </div>
         <div class="ask-email">
             <button>Send an Enquiry</button>
@@ -123,12 +136,13 @@
             </div>
         </div>
         <div class="footer-btm" id="footer-btm">
+            <button>Website Design by bd code_</button>
             <p>© 2020 PnB Realty Property Developers LLP. All Rights Reserved.</p>
         </div>
     </div>
 </body>
 <script>
-        function showlist() {
+    function showlist() {
         document.getElementById("small-menu").style.display = "flex";
         document.getElementById("logo").style.visibility = "hidden";
         document.body.style.overflow = "hidden";
